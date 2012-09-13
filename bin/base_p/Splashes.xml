@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2007 sp1 (http://www.altova.com) by mixail (EMBRACE) -->
+<GUI>
+	<include>gui.lua</include>
+	<Layer name="Splashes">
+		<Controls>
+			<SplashesWidget name="Splashes"/>
+		</Controls>
+	</Layer>
+</GUI>

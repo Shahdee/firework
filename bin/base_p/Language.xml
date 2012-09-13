@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40"
+ xmlns:x2="http://schemas.microsoft.com/office/excel/2003/xml"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Version>12.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <Colors>
+   <Color>
+    <Index>3</Index>
+    <RGB>#C0C0C0</RGB>
+   </Color>
+   <Color>
+    <Index>4</Index>
+    <RGB>#FF0000</RGB>
+   </Color>
+  </Colors>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>9000</WindowHeight>
+  <WindowWidth>13860</WindowWidth>
+  <WindowTopX>240</WindowTopX>
+  <WindowTopY>75</WindowTopY>
+  <RefModeR1C1/>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:CharSet="204" x:Family="Swiss" ss:Size="11"
+    ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62" ss:Name="Default">
+  </Style>
+  <Style ss:ID="s68" ss:Parent="s62">
+   <Font ss:FontName="Malgun Gothic" x:Family="Swiss" ss:Size="9"
+    ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s69" ss:Parent="s62">
+   <Alignment ss:Vertical="Bottom" ss:WrapText="1"/>
+   <Font ss:FontName="Malgun Gothic" x:Family="Swiss" ss:Size="9"
+    ss:Color="#000000"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Лист1">
+  <Table ss:ExpandedColumnCount="4" ss:ExpandedRowCount="5" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="s62" ss:DefaultRowHeight="15">
+   <Column ss:StyleID="s62" ss:Width="64.5"/>
+   <Column ss:StyleID="s62" ss:AutoFitWidth="0" ss:Width="155.25"/>
+   <Column ss:StyleID="s62" ss:AutoFitWidth="0" ss:Width="421.5"/>
+   <Column ss:StyleID="s62" ss:Width="64.5"/>
+   <Row ss:AutoFitHeight="0" ss:Height="13.5">
+    <Cell ss:StyleID="s68"><Data ss:Type="String">ID</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Attributes</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">English</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Russian</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="13.5">
+    <Cell ss:StyleID="s68"><Data ss:Type="String">TEST_TEXT</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">xScale=1.0 font=arial width=240 align=width</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">And here there used to be ancient {color=255;200;30;255}writings{} full of wisdom. But after the disaster came to pass, all the letters got {color=255;200;30;255}mixed up{}. The writings lost their meaning and along with it, their magic power.</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Загрузка</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="30">
+    <Cell ss:StyleID="s68"><Data ss:Type="String">text666_1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">font=Hint width=140</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="String">àáâãäå¸æ¿¡çèéêëìíîïð&#160;ñò óôõÅöøùüýþÿ&#10;1234567890abcdefghijklmnopqrstuvwxyz</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s68"><Data ss:Type="String">aliased</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">font=font666</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Aliased text</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s68"><Data ss:Type="String">kor_text</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">font=Cooper25 align=left</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">안돼!...너무 빨라요, 너무 빨라요… 조금 천천히!</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">3</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Unsynced/>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>0</VerticalResolution>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>5</ActiveRow>
+     <ActiveCol>1</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <x:WorksheetOptions/>
+ </Worksheet>
+ <Worksheet ss:Name="Лист2">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="s62" ss:DefaultRowHeight="15">
+   <Column ss:StyleID="s62" ss:Width="64.5"/>
+   <Row ss:AutoFitHeight="0" ss:Height="13.5"/>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Unsynced/>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <x:WorksheetOptions/>
+ </Worksheet>
+ <Worksheet ss:Name="Лист3">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="s62" ss:DefaultRowHeight="15">
+   <Column ss:StyleID="s62" ss:Width="64.5"/>
+   <Row ss:AutoFitHeight="0" ss:Height="13.5"/>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Unsynced/>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <x:WorksheetOptions/>
+ </Worksheet>
+</Workbook>

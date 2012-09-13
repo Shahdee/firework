@@ -1,0 +1,7 @@
+<Resources>
+	<Sounds>
+		<!--sample id="sound1" path="Intro.ogg" mode="cache" />
+		<sample id="sound2" path="Architect_Menu_v3.ogg" mode="cache" /-->
+		<sample id="longStream" path="sounds/longStream.ogg" mode="stream"/>
+	</Sounds>
+</Resources>

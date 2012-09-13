@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<settings>
+    <textures_path value="./particles" />
+    <main_wnd_x value="31" />
+    <main_wnd_y value="19" />
+    <main_wnd_w value="368" />
+    <main_wnd_h value="529" />
+    <sys_wnd_x value="10" />
+    <sys_wnd_y value="202" />
+    <sys_wnd_w value="580" />
+    <sys_wnd_h value="720" />
+    <param_wnd_x value="572" />
+    <param_wnd_y value="702" />
+    <param_wnd_w value="625" />
+    <param_wnd_h value="356" />
+    <preview_wnd_x value="399" />
+    <preview_wnd_y value="130" />
+    <preview_wnd_w value="800" />
+    <preview_wnd_h value="600" />
+</settings>

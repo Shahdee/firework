@@ -1,0 +1,25 @@
+<Frames count="23" frameWidth="220" frameHeight="220" fpsFactor="0.50">
+  <frame x="0" y="0" width="61" height="78" innerX="69" innerY="78" />
+  <frame x="61" y="0" width="61" height="76" innerX="69" innerY="85" />
+  <frame x="122" y="0" width="61" height="77" innerX="69" innerY="83" />
+  <frame x="183" y="0" width="63" height="80" innerX="68" innerY="74" />
+  <frame x="246" y="0" width="69" height="79" innerX="66" innerY="70" />
+  <frame x="315" y="0" width="74" height="74" innerX="66" innerY="69" />
+  <frame x="389" y="0" width="59" height="76" innerX="75" innerY="69" />
+  <frame x="448" y="0" width="40" height="82" innerX="86" innerY="65" />
+  <frame x="488" y="0" width="53" height="78" innerX="80" innerY="67" />
+  <frame x="541" y="0" width="74" height="76" innerX="69" innerY="69" />
+  <frame x="615" y="0" width="71" height="80" innerX="73" innerY="70" />
+  <frame x="686" y="0" width="64" height="77" innerX="79" innerY="77" />
+  <frame x="750" y="0" width="63" height="76" innerX="80" innerY="85" />
+  <frame x="813" y="0" width="64" height="79" innerX="79" innerY="82" />
+  <frame x="877" y="0" width="64" height="80" innerX="79" innerY="75" />
+  <frame x="941" y="0" width="67" height="80" innerX="76" innerY="70" />
+  <frame x="1008" y="0" width="75" height="76" innerX="69" innerY="68" />
+  <frame x="1083" y="0" width="59" height="77" innerX="76" innerY="68" />
+  <frame x="1142" y="0" width="39" height="81" innerX="86" innerY="66" />
+  <frame x="1181" y="0" width="52" height="77" innerX="79" innerY="68" />
+  <frame x="1233" y="0" width="75" height="75" innerX="66" innerY="70" />
+  <frame x="1308" y="0" width="70" height="79" innerX="66" innerY="72" />
+  <frame x="1378" y="0" width="61" height="78" innerX="69" innerY="78" />
+</Frames>

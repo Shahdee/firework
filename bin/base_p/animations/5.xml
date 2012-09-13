@@ -1,0 +1,26 @@
+<Frames count="24">
+	<frame x="5" y="5" width="51" height="100" innerX="84" innerY="54" frameWidth="230" frameHeight="230" path="f.11.png"/>
+	<frame x="61" y="4" width="50" height="101" innerX="84" innerY="53" frameWidth="230" frameHeight="230" path="f.12.png"/>
+	<frame x="117" y="4" width="52" height="100" innerX="84" innerY="53" frameWidth="230" frameHeight="230" path="f.13.png"/>
+	<frame x="182" y="3" width="51" height="102" innerX="85" innerY="52" frameWidth="230" frameHeight="230" path="f.14.png"/>
+	<frame x="247" y="2" width="51" height="103" innerX="86" innerY="51" frameWidth="230" frameHeight="230" path="f.15.png"/>
+	<frame x="311" y="2" width="52" height="102" innerX="86" innerY="51" frameWidth="230" frameHeight="230" path="f.16.png"/>
+	<frame x="375" y="2" width="52" height="102" innerX="86" innerY="51" frameWidth="230" frameHeight="230" path="f.17.png"/>
+	<frame x="432" y="3" width="52" height="100" innerX="87" innerY="52" frameWidth="230" frameHeight="230" path="f.18.png"/>
+	<frame x="489" y="3" width="50" height="102" innerX="88" innerY="52" frameWidth="230" frameHeight="230" path="f.19.png"/>
+	<frame x="544" y="4" width="51" height="103" innerX="87" innerY="53" frameWidth="230" frameHeight="230" path="f.20.png"/>
+	<frame x="600" y="4" width="50" height="102" innerX="87" innerY="53" frameWidth="230" frameHeight="230" path="f.21.png"/>
+	<frame x="663" y="5" width="51" height="101" innerX="86" innerY="54" frameWidth="230" frameHeight="230" path="f.22.png"/>
+	<frame x="727" y="5" width="51" height="100" innerX="86" innerY="54" frameWidth="230" frameHeight="230" path="f.23.png"/>
+	<frame x="791" y="5" width="51" height="100" innerX="86" innerY="54" frameWidth="230" frameHeight="230" path="f.24.png"/>
+	<frame x="855" y="4" width="50" height="101" innerX="86" innerY="53" frameWidth="230" frameHeight="230" path="f.25.png"/>
+	<frame x="917" y="3" width="52" height="102" innerX="84" innerY="52" frameWidth="230" frameHeight="230" path="f.26.png"/>
+	<frame x="117" y="107" width="51" height="102" innerX="84" innerY="52" frameWidth="230" frameHeight="230" path="f.27.png"/>
+	<frame x="308" y="106" width="51" height="103" innerX="83" innerY="51" frameWidth="230" frameHeight="230" path="f.28.png"/>
+	<frame x="364" y="106" width="51" height="102" innerX="83" innerY="51" frameWidth="230" frameHeight="230" path="f.29.png"/>
+	<frame x="419" y="107" width="51" height="100" innerX="82" innerY="52" frameWidth="230" frameHeight="230" path="f.30.png"/>
+	<frame x="3" y="115" width="51" height="102" innerX="82" innerY="52" frameWidth="230" frameHeight="230" path="f.31.png"/>
+	<frame x="60" y="116" width="50" height="103" innerX="83" innerY="53" frameWidth="230" frameHeight="230" path="f.32.png"/>
+	<frame x="172" y="117" width="50" height="101" innerX="83" innerY="54" frameWidth="230" frameHeight="230" path="f.33.png"/>
+	<frame x="229" y="117" width="51" height="101" innerX="84" innerY="54" frameWidth="230" frameHeight="230" path="f.34.png"/>
+</Frames>

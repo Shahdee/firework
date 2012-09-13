@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2007 sp1 (http://www.altova.com) by mixail (EMBRACE) -->
+<Resources>
+	<Fonts>
+		<font name="arial"/>
+		<font name="Hint" track="1"/>
+	</Fonts>
+	<Textures>
+		<texture id="CursorActive" path="textures\cur_active.png" group="TestGroup" upload="false"/>
+		<texture id="CursorNormal" path="textures\cur_normal.png" group="TestGroup" upload="false"/>
+		<texture id="fish_01" path="textures\models\fish_01.dds" mipmaps="0"/>
+		<texture id="GearTexture" path="animations\gear\gear_01.png" group="TestGroup" upload="false"/>
+		<texture id="Background" path="textures\background.jpg" group="TestGroup" upload="false"/>
+		<texture id="ChangeUserNormal" path="textures\Local\GUI\change_player_normal.png"/>
+		<texture id="ChangeUserActive" path="textures\Local\GUI\change_player_active.png"/>
+		<texture id="btnStart_Core" path="textures\Local\Buttons\start_ball.png" group="MainMenu" upload="true"/>
+		<texture id="btnStart_UShadow" path="textures\Local\Buttons\start_ushadow.png" group="MainMenu" upload="true"/>
+		<texture id="btnStart_PShadow" path="textures\Local\Buttons\start_pshadow.png" group="MainMenu" upload="true"/>
+		<texture id="btnStart_Text" path="textures\Local\Buttons\start_text.png" group="MainMenu" upload="true"/>
+		<texture id="btnStart_SText" path="textures\Local\Buttons\start_stext.png" group="MainMenu" upload="true"/>
+	</Textures>
+	<VertexBuffers/>
+</Resources>

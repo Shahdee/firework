@@ -1,0 +1,16 @@
+<root>
+    <File fileName="Textures/Particles/adot.png" width="64" height="64" alphaChannel="true" />
+    <File fileName="Textures/Particles/star2.png" width="64" height="64" alphaChannel="true" />
+    <File fileName="animations\gear\gear_01.png" width="128" height="64" alphaChannel="true" />
+    <File fileName="textures\Local\Buttons\start_ball.png" width="118" height="115" alphaChannel="true" />
+    <File fileName="textures\Local\Buttons\start_pshadow.png" width="117" height="115" alphaChannel="true" />
+    <File fileName="textures\Local\Buttons\start_stext.png" width="81" height="30" alphaChannel="true" />
+    <File fileName="textures\Local\Buttons\start_text.png" width="81" height="30" alphaChannel="true" />
+    <File fileName="textures\Local\Buttons\start_ushadow.png" width="118" height="115" alphaChannel="true" />
+    <File fileName="textures\Local\GUI\change_player_active.png" width="165" height="23" alphaChannel="true" />
+    <File fileName="textures\Local\GUI\change_player_normal.png" width="165" height="23" alphaChannel="true" />
+    <File fileName="textures\background.jpg" width="800" height="600" alphaChannel="false" />
+    <File fileName="textures\cur_active.png" width="64" height="64" alphaChannel="true" />
+    <File fileName="textures\cur_normal.png" width="64" height="64" alphaChannel="true" />
+    <File fileName="textures\models\fish_01.dds" width="256" height="256" alphaChannel="false" />
+</root>

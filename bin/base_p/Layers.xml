@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<GUI>
+	<!--include>gui.lua</include-->
+
+	<Layer name="TestLayer">
+		<Controls>
+			<MyWidget name="MyWidget"/>
+		</Controls>
+	</Layer>
+</GUI>
