@@ -9,33 +9,43 @@ Firework::Firework(int i, ParticleEffect* eff)
 {
 	_eff=eff;
 	_isAlive=true;
+	_isAccesable=true;
 
 	if(i==1)
 	{
 		_pos = Core::mainInput.GetMousePos();
 		_eff->posX = _pos.x;
 		_eff->posY = _pos.y;
-		_velocity.x = -30 + (rand() / (float)RAND_MAX) * 40;
-		_velocity.y = Core::appInstance->GAME_CONTENT_HEIGHT/4 + (rand() / (float)RAND_MAX) *(Core::appInstance->GAME_CONTENT_HEIGHT/3);
+		_angle = utils::random(math::PI/2.f - math::PI/6.f , math::PI/2.f + math::PI/6.f); 
+		_velocity.x = 0;
+		_velocity.y =  Core::appInstance->GAME_CONTENT_HEIGHT/4 + (rand() / (float)RAND_MAX) *(Core::appInstance->GAME_CONTENT_HEIGHT/3);
+		_direction.x = math::cos(_angle);
+		_direction.y = math::sin(_angle);
 		_eff->Reset();
-		_isAccesable=true;
 	}
 	else
 	{
-		_velocity.x = -50 + (rand() / (float)RAND_MAX) * 150;
-		_velocity.y = -50 + (rand() / (float)RAND_MAX) * 150;
-		_isAccesable=true;
+		_angle = utils::random(0.f,1.f)*math::PI*2;
+		float speed =utils::random(0.f,1.f)*200; 
+		_velocity.x = math::cos(_angle)*speed;
+		_velocity.y = math::sin(_angle)*speed;
+		_direction.x = math::cos(_angle); 
+		_direction.y = math::sin(_angle);
 	}
-
 }
 
 
-void Firework::UpdatePosition(float delta,float gravity, float factor)
+void Firework::UpdatePosition(float delta,float gravity, float factor, float fuel)
 {
-	_velocity.x*=factor;
+	_velocity.y-=gravity;
+	_velocity+=_direction*fuel;
+/*
+	_angle = 0.02 * (utils::random(0.f,1.f) < 0.5 ? 1 : -1); 
+	_direction.x = math::cos(_angle) * _direction.x - math::sin(_angle) * _direction.y;
+	_direction.y = math::sin(_angle) * _direction.x + math::cos(_angle) * _direction.y;
+*/
 	_pos.x+=_velocity.x*delta;
 	_pos.y+=_velocity.y*delta;
-	_velocity.y-=gravity;
 	_eff->posX =_pos.x;
 	_eff->posY =_pos.y;
 }
@@ -67,6 +77,7 @@ MyWidget::MyWidget(const std::string &name_, Xml:: TiXmlElement *xmlElement)
 	,_gravity(0.05)
 	,_factor(1.0)
 	,_alpha(1.0)
+	,_fuel(0.2)
 {
 	Init();
 	ReadParamsFromFile();
@@ -78,7 +89,7 @@ void MyWidget::CreateFirework()
 {
 	_isCreated = true;
 	_lastGroupWasDestroyed = false;
-	ParticleEffect *eff = _effCont.AddEffect("Tail");
+	ParticleEffect *eff = _effCont.AddEffect("Tail2");
 	_forest.push_front(new Firework(1,eff));
 }
 
@@ -128,6 +139,7 @@ void MyWidget::ResetFireworkVals()
 	_lifeTime=2.5;
 	_gravity=0.05;
 	_alpha=1.0;
+	_fuel = 0.2;
 	_wasLastGroup = false;
 }
 
@@ -138,7 +150,7 @@ void MyWidget::UpdateFirePosition(float dt)
 	while(el!=_forest.end())
 	{
 		if((*el)->_isAlive)
-			(*el)->UpdatePosition(dt,_gravity, _factor);
+			(*el)->UpdatePosition(dt,_gravity, _factor, _fuel);
 		++el;
 	}
 }
@@ -179,12 +191,10 @@ void MyWidget::Update(float dt)
 		else
 		{
 			_currAge=0;
-			_gravity=0.02;
 			_factor=1;
-			if(_lifeTime>0.2)
-				_lifeTime-=0.002;
-			else
-				_lifeTime=2.0;
+			_fuel=0;
+			_gravity=0.15;
+			_lifeTime=_lifeTime/2.f;
 			_lastGroupWasDestroyed=true;
 			int currLevelFireCounter=0;
 			int currLevelFire = pow(_children,(_currLevel-1));
@@ -203,18 +213,21 @@ void MyWidget::Update(float dt)
 				 {
 					for(int i=0; i<_children; i++)
 					{
-						ParticleEffect* eff =_effCont.AddEffect("Tail");
+						ParticleEffect* eff =_effCont.AddEffect("Tail2");
 						_forest.push_back(new Firework(0,eff));
 						_forest.back()->_pos = (*el)->_pos;
 						_forest.back()->_eff->posX = (*el)->_pos.x;
 						_forest.back()->_eff->posY = (*el)->_pos.y;
+						_forest.back()->_velocity+= (*el)->_velocity*0.5;
 						_forest.back()->_eff->Reset();
 					}
 
+					
 					(*el)->_eff= _effCont.AddEffect("Exp");
 					(*el)->_eff->posX = (*el)->_pos.x;
 					(*el)->_eff->posY = (*el)->_pos.y;
 					(*el)->_eff->Reset();
+					
 				}
 				currLevelFireCounter++;
 				++el;
@@ -273,8 +286,8 @@ void MyWidget::InitializeFireLevel(string name)
 		 }
 	}
 
-_level = utils::lexical_cast<int>(level); 
-_children = utils::lexical_cast<int>(children); 
+	_level = utils::lexical_cast<int>(level); 
+	_children = utils::lexical_cast<int>(children); 
 }
 
 void MyWidget::ReadParamsFromFile()

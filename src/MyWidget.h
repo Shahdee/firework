@@ -7,13 +7,15 @@ friend class MyWidget;
 private:
 	FPoint _pos;
 	FPoint _velocity;
+	FPoint _direction;
+	float  _angle;
 	ParticleEffect *_eff;
 	bool _isAlive;
 	bool _isAccesable;
 	Firework(int,ParticleEffect*);
 public:
 	void CreateOne();
-	void UpdatePosition(float,float,float);
+	void UpdatePosition(float,float,float,float);
 	void DestroyOne();
 };
 
@@ -29,6 +31,7 @@ private:
 	float _gravity;
 	float _factor;
 	float _alpha;
+	float _fuel;
     std::list<Firework*> _forest; // список с фейрверками
 	bool _isCreated;
 	bool _wasLastGroup;
