@@ -15,7 +15,7 @@ private:
 	Firework(int,ParticleEffect*);
 public:
 	void CreateOne();
-	void UpdatePosition(float,float,float,float);
+	void UpdatePosition(float,float,float,float, float);
 	void DestroyOne();
 };
 
@@ -32,6 +32,7 @@ private:
 	float _factor;
 	float _alpha;
 	float _fuel;
+	float _velocityCoeff;
     std::list<Firework*> _forest; // список с фейрверками
 	bool _isCreated;
 	bool _wasLastGroup;
@@ -52,6 +53,7 @@ public:
 	virtual void InitializeFireLevel(string name);
 	virtual void ReadParamsFromFile(); 
 	virtual bool TimeToExplodeLevel1();
+	virtual void CheckAccesibility(); // проверяет, закончился ли эффект самого последнего уровня
 	virtual void DeleteDead(); // удаляет элемент из леса фейрверков
 	virtual void DestroyAllFire(); // уничтожает весь фейрверк
 	virtual void ResetFireworkVals(); // устанавливает все настраиваемые параметры фейрверка по дефолту

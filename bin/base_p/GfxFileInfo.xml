@@ -1,5 +1,6 @@
 <root>
     <File fileName="Textures/Particles/adot.png" width="64" height="64" alphaChannel="true" />
+    <File fileName="Textures/Particles/star.jpg" width="64" height="64" alphaChannel="false" />
     <File fileName="Textures/Particles/star2.png" width="64" height="64" alphaChannel="true" />
     <File fileName="animations\gear\gear_01.png" width="128" height="64" alphaChannel="true" />
     <File fileName="textures\Local\Buttons\start_ball.png" width="118" height="115" alphaChannel="true" />

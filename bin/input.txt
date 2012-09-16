@@ -1,2 +1,2 @@
-Level=3
-Count=15
+Level=2
+Count=50

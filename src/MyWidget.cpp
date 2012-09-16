@@ -35,15 +35,16 @@ Firework::Firework(int i, ParticleEffect* eff)
 }
 
 
-void Firework::UpdatePosition(float delta,float gravity, float factor, float fuel)
+void Firework::UpdatePosition(float delta,float gravity, float factor, float fuel, float level)
 {
 	_velocity.y-=gravity;
 	_velocity+=_direction*fuel;
-/*
-	_angle = 0.02 * (utils::random(0.f,1.f) < 0.5 ? 1 : -1); 
-	_direction.x = math::cos(_angle) * _direction.x - math::sin(_angle) * _direction.y;
-	_direction.y = math::sin(_angle) * _direction.x + math::cos(_angle) * _direction.y;
-*/
+	if(level>1)
+	{
+		_angle = 0.02 * (utils::random(0.f,1.f) < 0.5 ? 1 : -1);
+		_direction.x= math::cos(_angle) * _direction.x - math::sin(_angle) * _direction.y;
+		_direction.y= math::sin(_angle) * _direction.y + math::cos(_angle) * _direction.y;
+	}
 	_pos.x+=_velocity.x*delta;
 	_pos.y+=_velocity.y*delta;
 	_eff->posX =_pos.x;
@@ -78,6 +79,7 @@ MyWidget::MyWidget(const std::string &name_, Xml:: TiXmlElement *xmlElement)
 	,_factor(1.0)
 	,_alpha(1.0)
 	,_fuel(0.2)
+	,_velocityCoeff(0.1)
 {
 	Init();
 	ReadParamsFromFile();
@@ -94,28 +96,22 @@ void MyWidget::CreateFirework()
 }
 
 
-MyWidget::~MyWidget(void)
-{
+MyWidget::~MyWidget(void){}
 
-}
-
-void MyWidget::Init()
-{
-	
-}
+void MyWidget::Init(){}
 
 void MyWidget::Draw()
 {
-	if(_isCreated || _wasLastGroup)
-	{
+	//if(_isCreated || _wasLastGroup) 
+	//{
 		_effCont.Draw();
-	}
+	//}
 }
 
-void MyWidget::DeleteDead() // удал€ем взорвавшиес€ фейрверки
+void MyWidget::DeleteDead() // удал€ем взорвавшиес€ фейрверки на всех уровн€х, кроме последнего
 {
 	std::list<Firework*>::iterator el=_forest.begin();
-	while(_forest.size()!=0 && !((*el)->_isAlive))
+	while(_forest.size()!=0 && !((*el)->_isAlive) && !((*el)->_isAccesable))
 	{
 		_forest.front()->_eff->Finish();
 		_forest.front()->_eff=NULL;
@@ -140,18 +136,22 @@ void MyWidget::ResetFireworkVals()
 	_gravity=0.05;
 	_alpha=1.0;
 	_fuel = 0.2;
+	_velocityCoeff=0.1;
 	_wasLastGroup = false;
 }
 
 
 void MyWidget::UpdateFirePosition(float dt) 
 {
-	std::list<Firework*>::iterator el=_forest.begin();
-	while(el!=_forest.end())
+	if(_forest.size()!=0)
 	{
-		if((*el)->_isAlive)
-			(*el)->UpdatePosition(dt,_gravity, _factor, _fuel);
-		++el;
+		std::list<Firework*>::iterator el=_forest.begin();
+		while(el!=_forest.end())
+		{
+			if(_effCont.CheckEffect((*el)->_eff) && ((*el)->_isAlive || (*el)->_isAccesable))
+				(*el)->UpdatePosition(dt,_gravity, _factor, _fuel, _currLevel);
+			++el;
+		}
 	}
 }
 
@@ -162,6 +162,30 @@ bool MyWidget::TimeToExplodeLevel1()
 		return true;
 	}
 	return false;
+}
+
+void MyWidget::CheckAccesibility() // провер€ет жизнь последнего уровн€
+{
+	int i=0;
+	int sz;
+	if(_forest.size()!=0)
+	{
+		sz=_forest.size();
+		list<Firework*>::iterator el = _forest.begin();
+		while(el!=_forest.end() && i<sz)
+		{
+			if((*el)->_eff!=NULL && (*el)->_eff->isEnd())
+			{
+					(*el)->_isAccesable = false;
+					_forest.front()->_eff->Finish();
+					_forest.front()->_eff=NULL;
+					_forest.front()->DestroyOne();
+					_forest.pop_front();
+					el=_forest.begin();
+			}
+			i++;
+		}
+	}
 }
 
 
@@ -177,6 +201,7 @@ void MyWidget::Update(float dt)
 				if(_wasLastGroup)
 				{
 					_isCreated=false;
+					UpdateFirePosition(dt);
 					return;
 				}
 		}
@@ -195,6 +220,7 @@ void MyWidget::Update(float dt)
 			_fuel=0;
 			_gravity=0.15;
 			_lifeTime=_lifeTime/2.f;
+			_alpha*=0.5;
 			_lastGroupWasDestroyed=true;
 			int currLevelFireCounter=0;
 			int currLevelFire = pow(_children,(_currLevel-1));
@@ -206,11 +232,12 @@ void MyWidget::Update(float dt)
 			}
 			while(el!=_forest.end() && currLevelFireCounter<currLevelFire) // группа котора€ будет уничтожена
 			{
-				(*el)->_isAlive=false;
-				(*el)->_eff->Finish();
-
 				 if(!_wasLastGroup)
 				 {
+					(*el)->_isAlive=false;
+					(*el)->_isAccesable=false;
+					(*el)->_eff->Finish();
+
 					for(int i=0; i<_children; i++)
 					{
 						ParticleEffect* eff =_effCont.AddEffect("Tail2");
@@ -218,24 +245,45 @@ void MyWidget::Update(float dt)
 						_forest.back()->_pos = (*el)->_pos;
 						_forest.back()->_eff->posX = (*el)->_pos.x;
 						_forest.back()->_eff->posY = (*el)->_pos.y;
-						_forest.back()->_velocity+= (*el)->_velocity*0.5;
+						_forest.back()->_velocity+= (*el)->_velocity*_velocityCoeff;
 						_forest.back()->_eff->Reset();
 					}
-
-					
-					(*el)->_eff= _effCont.AddEffect("Exp");
-					(*el)->_eff->posX = (*el)->_pos.x;
-					(*el)->_eff->posY = (*el)->_pos.y;
-					(*el)->_eff->Reset();
-					
+					if(_currLevel==1) // взрыв на 1-ом уровне
+					{
+						(*el)->_eff= _effCont.AddEffect("Exp");
+						(*el)->_eff->posX = (*el)->_pos.x;
+						(*el)->_eff->posY = (*el)->_pos.y;
+						(*el)->_eff->Reset();
+					}
 				}
 				currLevelFireCounter++;
 				++el;
 			}
 			_currLevel++;
+			_velocityCoeff*=0.5;
 		}
-		UpdateFirePosition(dt);
 	}
+	else // если осталось только уничтожить последнюю группу 
+	{	
+		if(_forest.size()!=0)
+		{
+			list<Firework*>::iterator el=_forest.begin();
+			while(el!=_forest.end()) 
+			{
+				if( (*el) && ((*el)->_pos.y <= 0 || (*el)->_pos.y >= Core::appInstance->GAME_CONTENT_HEIGHT || (*el)->_pos.x <= 0 || (*el)->_pos.x >= Core::appInstance->GAME_CONTENT_WIDTH)  && (*el)->_isAlive && (*el)->_isAccesable )
+				{
+					(*el)->_isAlive=false;
+					(*el)->_isAccesable=false;
+					(*el)->_eff->Finish();
+					(*el)->_eff=NULL;
+					//(*el)->DestroyOne();
+				}
+				++el;
+			}
+			_gravity+=0.01;
+		}
+	}
+	UpdateFirePosition(dt);
 }
 
 static bool IsNumber(char &z)

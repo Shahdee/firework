@@ -2,7 +2,12 @@
 <Effects version="1.0">
     <Effect name="Tail">
         <ParticleSystem name="Iskra1" numOfParticles="3" lifeInitial="1.00" lifeVariation="0.08" startTime="0.20" deadCountTime="0.00" bornTime="0.00" additive="false" linkedParticles="false" needStartDeadCounter="false" orientParticles="false" isVelocity="false" isEqual="false" texture="star2.png" emitterType="point" emitterAngle="0" emitterRange="360" emitterOrientation="0" lineLength="100.00" rectWidth="100.00" rectHeight="100.00" ellipseRHor="50.00" ellipseRVert="30.00" ellipseThickness="1.00" isAnimation="false" frameWidth="1" frameHeight="1" isScaledNonproportional="true" isEqualCreateTime="false">
-            <Param name="x" initial="0.00" variation="0.00" d="0.00" dVariation="20.00" d2="0.00" d2Variation="0.00" />
+            <Param name="x" initial="0.00" variation="0.00" d="0.00" dVariation="20.00" d2="0.00" d2Variation="0.00">
+                <spline yRemoval="0.00">
+                    <key time="0.00" initial="0.00" variation="0.00" />
+                    <key time="1.00" initial="0.00" variation="0.00" />
+                </spline>
+            </Param>
             <Param name="y" initial="0.00" variation="0.00" d="0.00" dVariation="20.00" d2="0.00" d2Variation="0.00">
                 <spline yRemoval="0.00">
                     <key time="0.00" initial="0.00" variation="0.00" />
@@ -21,7 +26,12 @@
                     <key time="1.00" initial="0.87" variation="0.00" />
                 </spline>
             </Param>
-            <Param name="angle" initial="0.00" variation="360.00" d="0.00" dVariation="90.00" d2="0.00" d2Variation="0.00" />
+            <Param name="angle" initial="0.00" variation="360.00" d="0.00" dVariation="90.00" d2="0.00" d2Variation="0.00">
+                <spline yRemoval="0.00">
+                    <key time="0.00" initial="0.00" variation="0.00" />
+                    <key time="1.00" initial="0.00" variation="0.00" />
+                </spline>
+            </Param>
             <Param name="v" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00" />
             <Param name="spin" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00" />
             <Param name="red">
@@ -148,57 +158,131 @@
         </ParticleSystem>
     </Effect>
     <Effect name="Exp">
-        <ParticleSystem name="NewSystem" numOfParticles="40" lifeInitial="2.00" lifeVariation="0.15" startTime="0.08" deadCountTime="0.00" bornTime="0.00" additive="true" linkedParticles="false" needStartDeadCounter="false" orientParticles="false" isVelocity="true" isEqual="false" texture="adot.png" emitterType="point" emitterAngle="272" emitterRange="360" emitterOrientation="0" lineLength="100.00" rectWidth="100.00" rectHeight="100.00" ellipseRHor="50.00" ellipseRVert="30.00" ellipseThickness="1.00" isAnimation="false" frameWidth="1" frameHeight="1" isScaledNonproportional="false" isEqualCreateTime="false">
-            <Param name="x" initial="0.00" variation="0.00" d="0.00" dVariation="20.00" d2="0.00" d2Variation="0.00" />
-            <Param name="y" initial="0.00" variation="0.00" d="0.00" dVariation="20.00" d2="0.00" d2Variation="0.00" />
-            <Param name="size" initial="5.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00" />
-            <Param name="angle" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00" />
+        <ParticleSystem name="1" numOfParticles="150" lifeInitial="3.00" lifeVariation="0.10" startTime="0.08" deadCountTime="0.00" bornTime="0.00" additive="true" linkedParticles="false" needStartDeadCounter="false" orientParticles="false" isVelocity="true" isEqual="false" texture="star2.png" emitterType="point" emitterAngle="272" emitterRange="360" emitterOrientation="0" lineLength="100.00" rectWidth="100.00" rectHeight="100.00" ellipseRHor="50.00" ellipseRVert="30.00" ellipseThickness="1.00" isAnimation="false" frameWidth="1" frameHeight="1" isScaledNonproportional="false" isEqualCreateTime="false">
+            <Param name="x" initial="0.00" variation="0.00" d="0.00" dVariation="20.00" d2="0.00" d2Variation="0.00">
+                <spline yRemoval="0.00">
+                    <key time="0.00" initial="4.29" variation="0.00" />
+                    <key time="1.00" initial="0.00" variation="0.00" />
+                </spline>
+            </Param>
+            <Param name="y" initial="0.00" variation="0.00" d="0.00" dVariation="20.00" d2="0.00" d2Variation="0.00">
+                <spline yRemoval="0.00">
+                    <key time="0.00" initial="3.28" variation="0.00" />
+                    <key time="1.00" initial="0.00" variation="0.00" />
+                </spline>
+            </Param>
+            <Param name="size" initial="5.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00">
+                <spline yRemoval="0.00">
+                    <key time="0.00" initial="-6.57" variation="3.79" />
+                    <key time="1.00" initial="10.59" variation="5.39" />
+                </spline>
+            </Param>
+            <Param name="angle" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00">
+                <spline yRemoval="0.00">
+                    <key time="0.00" initial="6.82" variation="0.78" />
+                    <key time="1.00" initial="7.57" variation="0.47" />
+                </spline>
+            </Param>
             <Param name="v" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00">
                 <spline yRemoval="0.00">
-                    <key time="0.00" initial="34.63" variation="75.07" />
-                    <key time="0.48" initial="64.09" variation="2.29" />
-                    <key time="1.00" initial="35.85" variation="74.00" />
+                    <key time="0.00" initial="-54.56" variation="65.26" />
+                    <key time="0.17" initial="28.29" variation="58.88" />
+                    <key time="1.00" initial="-2.13" variation="49.54" />
                 </spline>
             </Param>
             <Param name="spin" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00">
                 <spline yRemoval="0.00">
-                    <key time="0.00" initial="0.89" variation="0.81" />
-                    <key time="0.27" initial="-2.92" variation="0.00" />
-                    <key time="0.51" initial="1.77" variation="0.55" />
-                    <key time="0.75" initial="-2.70" variation="0.00" />
-                    <key time="1.00" initial="0.60" variation="1.27" />
+                    <key time="0.00" initial="6.59" variation="3.01" />
+                    <key time="0.45" initial="16.00" variation="2.59" />
+                    <key time="1.00" initial="6.79" variation="4.54" />
                 </spline>
             </Param>
             <Param name="red">
                 <spline>
-                    <key time="0.00" initial="254.00" variation="0.00" />
-                    <key time="0.29" initial="66.00" variation="0.00" />
-                    <key time="0.59" initial="252.00" variation="0.00" />
-                    <key time="1.00" initial="26.00" variation="0.00" />
+                    <key time="0.00" initial="219.00" variation="0.00" />
+                    <key time="0.37" initial="66.00" variation="0.00" />
+                    <key time="0.76" initial="78.00" variation="0.00" />
+                    <key time="1.00" initial="6.00" variation="0.00" />
                 </spline>
             </Param>
             <Param name="green">
                 <spline>
-                    <key time="0.00" initial="183.00" variation="0.00" />
-                    <key time="0.29" initial="255.00" variation="0.00" />
-                    <key time="0.59" initial="216.00" variation="0.00" />
-                    <key time="1.00" initial="88.00" variation="0.00" />
+                    <key time="0.00" initial="230.00" variation="0.00" />
+                    <key time="0.37" initial="255.00" variation="0.00" />
+                    <key time="0.76" initial="172.00" variation="0.00" />
+                    <key time="1.00" initial="72.00" variation="0.00" />
                 </spline>
             </Param>
             <Param name="blue">
                 <spline>
-                    <key time="0.00" initial="118.00" variation="0.00" />
-                    <key time="0.29" initial="95.00" variation="0.00" />
-                    <key time="0.59" initial="141.00" variation="0.00" />
-                    <key time="1.00" initial="253.00" variation="0.00" />
+                    <key time="0.00" initial="6.00" variation="0.00" />
+                    <key time="0.37" initial="95.00" variation="0.00" />
+                    <key time="0.76" initial="250.00" variation="0.00" />
+                    <key time="1.00" initial="196.00" variation="0.00" />
                 </spline>
             </Param>
             <Param name="alpha">
                 <spline>
-                    <key time="0.00" initial="216.00" variation="0.00" />
-                    <key time="0.29" initial="115.00" variation="0.00" />
-                    <key time="0.59" initial="208.00" variation="0.00" />
-                    <key time="1.00" initial="144.00" variation="0.00" />
+                    <key time="0.00" initial="224.00" variation="0.00" />
+                    <key time="0.37" initial="115.00" variation="0.00" />
+                    <key time="0.76" initial="239.00" variation="0.00" />
+                    <key time="1.00" initial="218.00" variation="0.00" />
+                </spline>
+            </Param>
+            <Param name="fps" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00" />
+            <Param name="ySize" initial="5.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00" />
+        </ParticleSystem>
+        <ParticleSystem name="2" numOfParticles="50" lifeInitial="2.00" lifeVariation="0.50" startTime="0.50" deadCountTime="0.00" bornTime="0.00" additive="true" linkedParticles="false" needStartDeadCounter="false" orientParticles="false" isVelocity="true" isEqual="false" texture="adot.png" emitterType="point" emitterAngle="272" emitterRange="360" emitterOrientation="0" lineLength="100.00" rectWidth="100.00" rectHeight="100.00" ellipseRHor="49.75" ellipseRVert="29.94" ellipseThickness="200.00" isAnimation="false" frameWidth="1" frameHeight="1" isScaledNonproportional="false" isEqualCreateTime="false">
+            <Param name="x" initial="0.00" variation="0.00" d="0.00" dVariation="20.00" d2="0.00" d2Variation="0.00" />
+            <Param name="y" initial="0.00" variation="0.00" d="0.00" dVariation="20.00" d2="0.00" d2Variation="0.00" />
+            <Param name="size" initial="5.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00">
+                <spline yRemoval="0.00">
+                    <key time="0.00" initial="-7.60" variation="2.74" />
+                    <key time="1.00" initial="13.52" variation="3.60" />
+                </spline>
+            </Param>
+            <Param name="angle" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00">
+                <spline yRemoval="0.00">
+                    <key time="0.00" initial="2.38" variation="0.39" />
+                    <key time="1.00" initial="3.01" variation="0.39" />
+                </spline>
+            </Param>
+            <Param name="v" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00">
+                <spline yRemoval="0.00">
+                    <key time="0.00" initial="-1.15" variation="18.31" />
+                    <key time="0.34" initial="49.63" variation="17.77" />
+                    <key time="1.00" initial="14.09" variation="12.40" />
+                </spline>
+            </Param>
+            <Param name="spin" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00">
+                <spline yRemoval="0.00">
+                    <key time="0.00" initial="7.44" variation="3.71" />
+                    <key time="0.46" initial="23.82" variation="5.24" />
+                    <key time="1.00" initial="6.71" variation="4.85" />
+                </spline>
+            </Param>
+            <Param name="red">
+                <spline>
+                    <key time="0.00" initial="102.00" variation="0.00" />
+                    <key time="1.00" initial="48.00" variation="0.00" />
+                </spline>
+            </Param>
+            <Param name="green">
+                <spline>
+                    <key time="0.00" initial="251.00" variation="0.00" />
+                    <key time="1.00" initial="104.00" variation="0.00" />
+                </spline>
+            </Param>
+            <Param name="blue">
+                <spline>
+                    <key time="0.00" initial="13.00" variation="0.00" />
+                    <key time="1.00" initial="254.00" variation="0.00" />
+                </spline>
+            </Param>
+            <Param name="alpha">
+                <spline>
+                    <key time="0.00" initial="255.00" variation="0.00" />
+                    <key time="1.00" initial="152.00" variation="0.00" />
                 </spline>
             </Param>
             <Param name="fps" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00" />
@@ -206,28 +290,28 @@
         </ParticleSystem>
     </Effect>
     <Effect name="Tail2">
-        <ParticleSystem name="tail" numOfParticles="50" lifeInitial="0.50" lifeVariation="0.20" startTime="0.50" deadCountTime="0.00" bornTime="0.00" additive="true" linkedParticles="false" needStartDeadCounter="false" orientParticles="false" isVelocity="false" isEqual="false" texture="adot.png" emitterType="point" emitterAngle="0" emitterRange="360" emitterOrientation="0" lineLength="100.00" rectWidth="100.00" rectHeight="100.00" ellipseRHor="50.00" ellipseRVert="30.00" ellipseThickness="1.00" isAnimation="false" frameWidth="1" frameHeight="1" isScaledNonproportional="false" isEqualCreateTime="false">
+        <ParticleSystem name="tail" numOfParticles="30" lifeInitial="0.50" lifeVariation="0.12" startTime="0.50" deadCountTime="0.00" bornTime="0.00" additive="true" linkedParticles="false" needStartDeadCounter="false" orientParticles="false" isVelocity="false" isEqual="false" texture="star2.png" emitterType="point" emitterAngle="0" emitterRange="360" emitterOrientation="0" lineLength="100.00" rectWidth="100.00" rectHeight="100.00" ellipseRHor="50.00" ellipseRVert="30.00" ellipseThickness="1.00" isAnimation="false" frameWidth="1" frameHeight="1" isScaledNonproportional="false" isEqualCreateTime="false">
             <Param name="x" initial="0.00" variation="0.00" d="0.00" dVariation="20.00" d2="0.00" d2Variation="0.00">
                 <spline yRemoval="0.00">
                     <key time="0.00" initial="0.10" variation="0.05" />
-                    <key time="0.26" initial="0.05" variation="0.96" />
-                    <key time="0.49" initial="0.05" variation="0.22" />
-                    <key time="0.76" initial="0.05" variation="1.46" />
-                    <key time="1.00" initial="0.00" variation="3.35" />
+                    <key time="0.13" initial="0.00" variation="4.15" />
+                    <key time="0.29" initial="-0.59" variation="9.05" />
+                    <key time="0.49" initial="0.05" variation="1.46" />
+                    <key time="1.00" initial="0.00" variation="16.46" />
                 </spline>
             </Param>
             <Param name="y" initial="0.00" variation="0.00" d="0.00" dVariation="20.00" d2="0.00" d2Variation="0.00">
                 <spline yRemoval="0.00">
                     <key time="0.00" initial="-0.07" variation="0.07" />
-                    <key time="0.25" initial="-0.07" variation="1.00" />
+                    <key time="0.26" initial="0.23" variation="9.13" />
                     <key time="0.52" initial="-0.07" variation="0.22" />
-                    <key time="1.00" initial="0.00" variation="2.94" />
+                    <key time="1.00" initial="0.00" variation="15.39" />
                 </spline>
             </Param>
             <Param name="size" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00">
                 <spline yRemoval="0.00">
-                    <key time="0.00" initial="7.20" variation="15.07" />
-                    <key time="1.00" initial="5.19" variation="3.35" />
+                    <key time="0.00" initial="10.68" variation="5.66" />
+                    <key time="1.00" initial="6.59" variation="3.50" />
                 </spline>
             </Param>
             <Param name="angle" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00">
@@ -240,34 +324,26 @@
             <Param name="spin" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00" />
             <Param name="red">
                 <spline>
-                    <key time="0.00" initial="102.00" variation="0.00" />
-                    <key time="0.41" initial="174.00" variation="0.00" />
-                    <key time="0.66" initial="54.00" variation="0.00" />
-                    <key time="1.00" initial="213.00" variation="0.00" />
+                    <key time="0.00" initial="255.00" variation="0.00" />
+                    <key time="1.00" initial="36.00" variation="0.00" />
                 </spline>
             </Param>
             <Param name="green">
                 <spline>
-                    <key time="0.00" initial="248.00" variation="0.00" />
-                    <key time="0.41" initial="221.00" variation="0.00" />
-                    <key time="0.66" initial="164.00" variation="0.00" />
-                    <key time="1.00" initial="240.00" variation="0.00" />
+                    <key time="0.00" initial="26.00" variation="0.00" />
+                    <key time="1.00" initial="36.00" variation="0.00" />
                 </spline>
             </Param>
             <Param name="blue">
                 <spline>
-                    <key time="0.00" initial="39.00" variation="0.00" />
-                    <key time="0.41" initial="66.00" variation="0.00" />
-                    <key time="0.66" initial="254.00" variation="0.00" />
-                    <key time="1.00" initial="104.00" variation="0.00" />
+                    <key time="0.00" initial="26.00" variation="0.00" />
+                    <key time="1.00" initial="255.00" variation="0.00" />
                 </spline>
             </Param>
             <Param name="alpha">
                 <spline>
                     <key time="0.00" initial="201.00" variation="0.00" />
-                    <key time="0.41" initial="60.00" variation="0.00" />
-                    <key time="0.66" initial="212.00" variation="0.00" />
-                    <key time="1.00" initial="224.00" variation="0.00" />
+                    <key time="1.00" initial="192.00" variation="0.00" />
                 </spline>
             </Param>
             <Param name="fps" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00" />
@@ -277,6 +353,47 @@
                     <key time="1.00" initial="1.99" variation="2.11" />
                 </spline>
             </Param>
+        </ParticleSystem>
+        <ParticleSystem name="head" numOfParticles="30" lifeInitial="0.20" lifeVariation="0.08" startTime="0.20" deadCountTime="0.00" bornTime="0.00" additive="true" linkedParticles="false" needStartDeadCounter="false" orientParticles="false" isVelocity="false" isEqual="false" texture="star.jpg" emitterType="point" emitterAngle="0" emitterRange="360" emitterOrientation="0" lineLength="100.00" rectWidth="100.00" rectHeight="100.00" ellipseRHor="50.00" ellipseRVert="30.00" ellipseThickness="1.00" isAnimation="false" frameWidth="1" frameHeight="1" isScaledNonproportional="false" isEqualCreateTime="false">
+            <Param name="x" initial="0.00" variation="0.00" d="0.00" dVariation="20.00" d2="0.00" d2Variation="0.00" />
+            <Param name="y" initial="0.00" variation="0.00" d="0.00" dVariation="20.00" d2="0.00" d2Variation="0.00" />
+            <Param name="size" initial="5.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00">
+                <spline yRemoval="0.00">
+                    <key time="0.00" initial="0.12" variation="4.53" />
+                    <key time="0.32" initial="0.12" variation="1.68" />
+                    <key time="0.66" initial="0.12" variation="0.83" />
+                    <key time="1.00" initial="-0.00" variation="1.09" />
+                </spline>
+            </Param>
+            <Param name="angle" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00" />
+            <Param name="v" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00" />
+            <Param name="spin" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00" />
+            <Param name="red">
+                <spline>
+                    <key time="0.00" initial="255.00" variation="0.00" />
+                    <key time="1.00" initial="247.00" variation="0.00" />
+                </spline>
+            </Param>
+            <Param name="green">
+                <spline>
+                    <key time="0.00" initial="43.00" variation="0.00" />
+                    <key time="1.00" initial="215.00" variation="0.00" />
+                </spline>
+            </Param>
+            <Param name="blue">
+                <spline>
+                    <key time="0.00" initial="43.00" variation="0.00" />
+                    <key time="1.00" initial="32.00" variation="0.00" />
+                </spline>
+            </Param>
+            <Param name="alpha">
+                <spline>
+                    <key time="0.00" initial="185.00" variation="0.00" />
+                    <key time="1.00" initial="255.00" variation="0.00" />
+                </spline>
+            </Param>
+            <Param name="fps" initial="0.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00" />
+            <Param name="ySize" initial="5.00" variation="0.00" d="0.00" dVariation="0.00" d2="0.00" d2Variation="0.00" />
         </ParticleSystem>
     </Effect>
 </Effects>

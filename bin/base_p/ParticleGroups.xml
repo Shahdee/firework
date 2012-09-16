@@ -2,5 +2,6 @@
     <group name="Common">
         <texture path="Textures/Particles/star2.png" />
         <texture path="Textures/Particles/adot.png" />
+        <texture path="Textures/Particles/star.jpg" />
     </group>
 </Groups>
