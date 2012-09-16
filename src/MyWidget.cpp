@@ -89,12 +89,12 @@ MyWidget::MyWidget(const std::string &name_, Xml:: TiXmlElement *xmlElement)
 
 void MyWidget::CreateFirework()
 {
-	_isCreated = true;
+	if(_level!=1) // если наш фейрверк это нечто большее, чем 1 заряд
+		_isCreated = true;
 	_lastGroupWasDestroyed = false;
 	ParticleEffect *eff = _effCont.AddEffect("Tail2");
 	_forest.push_front(new Firework(1,eff));
 }
-
 
 MyWidget::~MyWidget(void){}
 
@@ -102,10 +102,7 @@ void MyWidget::Init(){}
 
 void MyWidget::Draw()
 {
-	//if(_isCreated || _wasLastGroup) 
-	//{
-		_effCont.Draw();
-	//}
+	_effCont.Draw();
 }
 
 void MyWidget::DeleteDead() // удаляем взорвавшиеся фейрверки на всех уровнях, кроме последнего
@@ -191,7 +188,6 @@ void MyWidget::CheckAccesibility() // проверяет жизнь последнего уровня
 
 void MyWidget::Update(float dt)
 {
-	int  num=0;
 	if(_isCreated)
 	{	
 		if(_lastGroupWasDestroyed)
@@ -270,17 +266,18 @@ void MyWidget::Update(float dt)
 			list<Firework*>::iterator el=_forest.begin();
 			while(el!=_forest.end()) 
 			{
-				if( (*el) && ((*el)->_pos.y <= 0 || (*el)->_pos.y >= Core::appInstance->GAME_CONTENT_HEIGHT || (*el)->_pos.x <= 0 || (*el)->_pos.x >= Core::appInstance->GAME_CONTENT_WIDTH)  && (*el)->_isAlive && (*el)->_isAccesable )
+				// если заряд выходит за рамки экрана, уничтожить его
+				if(((*el)->_pos.y <= 0 || (*el)->_pos.y >= Core::appInstance->GAME_CONTENT_HEIGHT || (*el)->_pos.x <= 0 || (*el)->_pos.x >= Core::appInstance->GAME_CONTENT_WIDTH)  && (*el)->_isAlive && (*el)->_isAccesable )
 				{
 					(*el)->_isAlive=false;
 					(*el)->_isAccesable=false;
 					(*el)->_eff->Finish();
 					(*el)->_eff=NULL;
-					//(*el)->DestroyOne();
 				}
 				++el;
 			}
-			_gravity+=0.01;
+			if(_level>1) // увеличиваем гравитацию если у нас больше одного заряда
+				_gravity+=0.01;
 		}
 	}
 	UpdateFirePosition(dt);
@@ -338,6 +335,7 @@ void MyWidget::InitializeFireLevel(string name)
 	_children = utils::lexical_cast<int>(children); 
 }
 
+
 void MyWidget::ReadParamsFromFile()
 {
 	string fileName="../input.txt";
@@ -353,6 +351,7 @@ void MyWidget::ReadParamsFromFile()
 		_children=2; 
 	}
 }
+
 
 bool MyWidget::MouseDown(const IPoint &mouse_pos)
 {
